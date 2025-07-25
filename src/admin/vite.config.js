@@ -1,10 +1,13 @@
-// src/admin/vite.config.js
-export default (config) => {
-  config.server = {
-    config.server,
+import { defineConfig } from 'vite';
+
+export default defineConfig({
+  server: {
     host: '0.0.0.0',
-    allowedHosts: 'https://strapi-production-6792.up.railway.app'
-  };
-  
-  return config;
-};
+    port: 1337,
+    allowedHosts: [
+      'strapi-production-6792.up.railway.app',
+      'localhost',
+      '.railway.app'
+    ]
+  }
+});
